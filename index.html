@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einkaufsliste</title>
+    <script src="list.js" defer></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+    <main>
+        <h1>Einkaufsliste</h1>
+        <button id="addElementBtnStart">Element hinzufügen</button>
+        <br><br>
+        <button id="deleteElementsBtn">Alle Elemente löschen🚮</button><br><br>
+        <ul id="list"></ul>
+    </main>
+    <div id="addElementPrompt">
+        <h3 id="addElementHeader">Element hinzufügen</h3>
+        <br>
+        <input type="text" id="addElementInput" placeholder="Element hinzufügen">
+        <button class="a" id="addElementBtn" onclick="addElement()">Okay</button>
+        <button class="b" id="nothingBtn">Abbrechen</button>
+    </div>
+    <div id="confirmDeleteAll">
+        <h3 id="confirmDeleteAllHeader">Alle Elemente löschen?</h3>
+        <br>
+        <button class="a" id="delBtn" onclick="deleteAllElements()">Okay</button>
+        <button class="b" id="nothingBtn2" onclick='hideDeleteAllPopup()'>Abbrechen</button>
+    </div>
+    <div id="overlayDiv"></div>
+    <footer>
+        Copyright © 2023 Checkliste24. All rights reserved. | Projekt der <a href="https://lateinmaus.netlify.app">Lateinmaus</a>
+    </footer>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js');
+        }
+    </script>
+</body>
+</html>
