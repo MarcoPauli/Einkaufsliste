@@ -39,7 +39,7 @@ deleteElementsBtn.addEventListener("click", () => {
 function addElement() {
     let addElementInput = document.getElementById("addElementInput");
     let userInput = addElementInput.value;
-    if (userInput != "") {
+    if (userInput.trim() != "") {
         createElement(userInput);
     }
     addElementInput.value = "";
